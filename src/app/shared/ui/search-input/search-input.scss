@@ -1,0 +1,58 @@
+@use '../../../../assets/styles/tokens' as *;
+
+:host {
+  display: block;
+}
+
+.search-container {
+  width: 480px;
+  display: flex;
+  align-items: center;
+  height: var(--search-input-height);
+  background-color: $input-bg;
+  border-radius: 40px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  transition: all .3s ease-in-out;
+  border: 1px solid transparent;
+
+  &.with-border {
+    border: 1px solid $border-default;
+  }
+
+  &:focus-within {
+    outline: 1px solid $border-default;
+  }
+  &:hover {
+    border: 1px solid $border-default;
+  }
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-muted;
+  margin-right: 8px;
+}
+
+.search-input {
+  flex: 1;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: $input-text;
+  caret-color: $text-primary;
+  font-family: inherit;
+  font-size: 16px;
+
+  &::placeholder {
+    color: $text-placeholder;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
