@@ -1,0 +1,26 @@
+{
+  "accounts": [
+    { "id": 101, "name": "Maritime Logistics Corp", "status": "Active",
+      "segment": "Shipping/Logistics", "owner": "Marcin McLennan",
+      "winnability": 0.82, "triage": 180 }
+  ],
+  "policies": [
+    { "id": 5001, "accountId": 101, "policyNo": "PL-2025-0001",
+      "lob": "Property", "premium": 12500, "status": "Active",
+      "effective": "2025-09-01", "expiration": "2026-08-31" }
+  ],
+  "workQueue": [
+    { "id": 1, "type": "Underwriter Referral", "client": "NAMEK Tech Solutions",
+      "status": "New", "created": "2025-04-16" }
+  ],
+  "news": [
+    { "id": 1, "title": "Rate hardening in Cyber market +15% YoY",
+      "source": "MarketWatch", "publishedAt": "2025-08-31T10:00:00Z" }
+  ],
+  "goals": {
+    "lossRatio": { "actual": 48.8, "target": 45 },
+    "renewal":   { "actual": 88,  "target": 90 },
+    "newBiz":    { "actual": 8.1, "target": 12 },
+    "gwp":       { "actual": 28.8, "target": 42.4 }
+  }
+}
