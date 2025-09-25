@@ -1,4 +1,4 @@
-import { NavigationItems } from './navigation.model';
+import { NavigationItems } from '@core/models/navigation.model';
 
 /**
  * Sample navigation data for the application.
@@ -14,48 +14,48 @@ export const MAIN_NAVIGATION: NavigationItems = [
     iconHeight: '19px',
     name: 'Dashboard',
     route: '/dashboard',
-    isActive: true
+    isActive: true,
   },
   {
     iconId: 'accounts',
     iconWidth: '18px',
     iconHeight: '20px',
     name: 'Accounts',
-    route: '/accounts'
+    route: '/accounts',
   },
   {
     iconId: 'brokers',
     iconWidth: '20px',
     iconHeight: '18px',
     name: 'Brokers',
-    route: '/brokers'
+    route: '/brokers',
   },
   {
     iconId: 'submissions',
     iconWidth: '16px',
     iconHeight: '20px',
     name: 'Submissions',
-    route: '/submissions'
+    route: '/submissions',
   },
   {
     iconId: 'organizations',
     iconWidth: '20px',
     iconHeight: '20px',
     name: 'Organizations',
-    route: '/organizations'
+    route: '/organizations',
   },
   {
     iconId: 'goalsRules',
     iconWidth: '18px',
     iconHeight: '20px',
     name: 'Goals & Rules',
-    route: '/goals-rules'
+    route: '/goals-rules',
   },
   {
     iconId: 'admin',
     iconWidth: '20px',
     iconHeight: '20px',
     name: 'Admin',
-    route: '/admin'
-  }
+    route: '/admin',
+  },
 ];

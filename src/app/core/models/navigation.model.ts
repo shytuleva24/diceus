@@ -28,7 +28,6 @@ export interface NavigationItem {
    */
   name: string;
 
-
   /**
    * The route path for the navigation item.
    * This should match a route defined in the application's routing configuration.

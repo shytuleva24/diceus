@@ -7,13 +7,33 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "npm run lint:ts && npm run lint:scss",
+    "lint:ts": "ng lint",
+    "lint:scss": "stylelint \"src/**/*.scss\"",
+    "lint:fix": "npm run lint:ts:fix && npm run lint:scss:fix",
+    "lint:ts:fix": "ng lint --fix",
+    "lint:scss:fix": "stylelint \"src/**/*.scss\" --fix",
+    "format": "prettier --write \"src/**/*.{ts,html,scss}\"",
     "start:app": "ng serve",
     "dev": "concurrently -k \"npm:start:api\" \"npm:start:app\"",
     "e2e": "cypress run",
     "e2e:open": "cypress open",
     "test:e2e": "start-server-and-test dev http-get://localhost:4200 e2e",
-    "start:api": "json-server --watch seed.json --port 3001 --delay 400"
+    "start:api": "json-server --watch seed.json --port 3001 --delay 400",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write --loglevel=error"
+    ],
+    "src/**/*.html": [
+      "prettier --write --loglevel=error"
+    ],
+    "src/**/*.scss": [
+      "stylelint --fix --max-warnings=0",
+      "prettier --write --loglevel=error"
+    ]
   },
   "prettier": {
     "printWidth": 100,
@@ -54,6 +74,8 @@
     "concurrently": "^9.2.1",
     "cypress": "^15.3.0",
     "eslint": "^9.35.0",
+    "eslint-plugin-import": "^2.29.1",
+    "husky": "^9.0.11",
     "jasmine-core": "~5.9.0",
     "json-server": "^1.0.0-beta.3",
     "karma": "~6.4.0",
@@ -61,7 +83,14 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
     "start-server-and-test": "^2.1.2",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-order": "^6.0.4",
     "typescript": "~5.9.2",
     "typescript-eslint": "8.40.0"
   }

@@ -1,5 +1,5 @@
-import { Component, computed, input, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit, computed, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-svg-icon',
@@ -9,20 +9,18 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./svg-icon.scss'],
 })
 export class SvgIcon implements OnInit {
-  iconId = input<string>('');
-  width = input<string | undefined>('24px');
-  height = input<string | undefined>('24px');
-  fill = input<string | undefined>(undefined);
-  class = input<string | undefined>(undefined);
+  public iconId = input<string>('');
+  public width = input<string | undefined>('24px');
+  public height = input<string | undefined>('24px');
+  public fill = input<string | undefined>(undefined);
+  public class = input<string | undefined>(undefined);
 
-  private spriteUrlSignal = signal<string>('');
-  public readonly spriteUrl = computed(() => this.spriteUrlSignal());
+  readonly spriteUrl = computed(() => this._spriteUrlSignal());
+  private _spriteUrlSignal = signal<string>('');
 
   ngOnInit(): void {
     const version = new Date().getTime();
 
-    this.spriteUrlSignal.set(
-      `./assets/sprite.svg?v=${version}#${this.iconId()}`,
-    );
+    this._spriteUrlSignal.set(`./assets/sprite.svg?v=${version}#${this.iconId()}`);
   }
 }

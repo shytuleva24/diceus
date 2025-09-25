@@ -1,4 +1,4 @@
-@use '../../../../assets/styles/tokens' as *;
+@use 'assets/styles/tokens' as *;
 
 :host {
   display: block;
@@ -6,12 +6,12 @@
 
 .avatar {
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
   background: $gradient-brand-strong;
+  border-radius: 50%;
   color: $color-white;
   font-weight: bold;
-  flex-shrink: 0;
   cursor: pointer;
 }

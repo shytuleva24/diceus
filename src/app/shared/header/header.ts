@@ -1,26 +1,22 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal, output, input } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { SearchInput } from '../ui/search-input/search-input';
-import { Avatar } from '../ui/avatar/avatar';
-import { NavigationItems } from '../../core/models/navigation.model';
-import { MAIN_NAVIGATION } from '../../core/models/navigation-data';
-import { Button } from "../ui/button/button";
+
+import { MAIN_NAVIGATION } from '@core/models/navigation-data';
+import { NavigationItems } from '@core/models/navigation.model';
+
+import { Avatar } from '@shared/ui/avatar/avatar';
+import { SearchInput } from '@shared/ui/search-input/search-input';
+
+import { Button } from '../ui/button/button';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    SearchInput,
-    Avatar,
-    Button,
-  ],
+  imports: [CommonModule, FormsModule, RouterModule, SearchInput, Avatar, Button],
   templateUrl: './header.html',
-  styleUrls: ['./header.scss']
+  styleUrls: ['./header.scss'],
 })
 export class Header {
   username = input<string>('');

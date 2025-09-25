@@ -1,25 +1,23 @@
-import { Component, forwardRef, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, forwardRef, input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-search-input',
   standalone: true,
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   templateUrl: './search-input.html',
   styleUrl: './search-input.scss',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => SearchInput),
-      multi: true
-    }
+      multi: true,
+    },
   ],
   host: {
-    '[style.--search-input-height]': 'height()'
-  }
+    '[style.--search-input-height]': 'height()',
+  },
 })
 export class SearchInput implements ControlValueAccessor {
   height = input<string>('28px');
@@ -29,13 +27,6 @@ export class SearchInput implements ControlValueAccessor {
 
   value = '';
   disabled = false;
-
-  onChange: (value: string) => void = () => {
-    // This is intentionally empty and will be overwritten by registerOnChange
-  };
-  onTouched: () => void = () => {
-    // This is intentionally empty and will be overwritten by registerOnTouched
-  };
 
   writeValue(value: string): void {
     this.value = value;
@@ -59,4 +50,11 @@ export class SearchInput implements ControlValueAccessor {
     this.onChange(value);
     this.onTouched();
   }
+
+  protected onChange: (value: string) => void = () => {
+    // This is intentionally empty and will be overwritten by registerOnChange
+  };
+  protected onTouched: () => void = () => {
+    // This is intentionally empty and will be overwritten by registerOnTouched
+  };
 }

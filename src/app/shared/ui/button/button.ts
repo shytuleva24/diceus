@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SvgIcon } from '../svg-icon/svg-icon';
+import { Component, input } from '@angular/core';
+
+import { SvgIcon } from '@shared/ui/svg-icon/svg-icon';
 
 export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'outline' | 'apply';
 
@@ -9,7 +10,7 @@ export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'outline' | 'app
   standalone: true,
   imports: [CommonModule, SvgIcon],
   templateUrl: './button.html',
-  styleUrl: './button.scss'
+  styleUrl: './button.scss',
 })
 export class Button {
   buttonType = input<ButtonType>('primary');

@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+
 import { Button } from './button';
 import { SvgIcon } from '../svg-icon/svg-icon';
 
@@ -9,9 +10,8 @@ describe('Button', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Button, SvgIcon]
-    })
-    .compileComponents();
+      imports: [Button, SvgIcon],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Button);
     component = fixture.componentInstance;
@@ -28,7 +28,6 @@ describe('Button', () => {
   });
 
   it('should apply the correct class based on buttonType input', () => {
-    // Set the buttonType to secondary
     fixture.componentRef.setInput('buttonType', 'secondary');
     fixture.detectChanges();
 
