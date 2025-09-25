@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { Layout } from './shared/layout/layout';
+
+import { Layout } from '@shared/layout/layout';
 
 export const routes: Routes = [
   {
@@ -9,23 +10,23 @@ export const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'dashboard'
+        redirectTo: 'dashboard',
       },
       {
         path: 'dashboard',
-        loadChildren: () => import('./features/dashboard/routes').then(m => m.routes),
-        title: 'Dashboard'
+        loadChildren: () => import('./features/dashboard/routes').then((m) => m.routes),
+        title: 'Dashboard',
       },
       {
-        path: 'accounts/:id',
-        loadChildren: () => import('./features/account/routes').then(m => m.routes),
-        title: 'Account Details'
-      }
-    ]
+        path: 'accounts',
+        loadChildren: () => import('./features/account/routes').then((m) => m.routes),
+        title: 'Account Details',
+      },
+    ],
   },
   {
     path: '**',
-    loadComponent: () => import('./shared/not-found/not-found').then(m => m.NotFound),
-    title: '404 - Page Not Found'
-  }
+    loadComponent: () => import('./shared/not-found/not-found').then((m) => m.NotFound),
+    title: '404 - Page Not Found',
+  },
 ];

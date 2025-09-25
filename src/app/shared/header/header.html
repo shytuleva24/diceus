@@ -1,2 +1,31 @@
-<header class="header">
+<header role="banner" class="header">
+  <div class="header-container">
+    <div class="header-welcome">
+      <h1>Hi {{ username() }}, welcome! You have {{ openTasks() }} open tasks.</h1>
+    </div>
+    <div class="header-actions">
+      <app-search-input
+        class="search"
+        height="48px"
+        [showBorder]="false"
+        [testId]="'header-search'"
+        [ngModel]="search()"
+        (ngModelChange)="onSearchChange($event)"
+      ></app-search-input>
+      <app-avatar size="40px" testId="header-avatar" [initials]="initials()"></app-avatar>
+    </div>
+  </div>
 </header>
+<nav class="navbar">
+  @for (item of navItems(); track item.name) {
+    <a [routerLink]="item.route" routerLinkActive="active" #rla="routerLinkActive" class="nav-link">
+      <app-button
+        [iconId]="item.iconId"
+        [iconWidth]="item.iconWidth"
+        [iconHeight]="item.iconHeight"
+        [text]="item.name"
+        [active]="rla.isActive"
+      ></app-button>
+    </a>
+  }
+</nav>

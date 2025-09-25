@@ -1,0 +1,5 @@
+<div [style.height]="height()" [style.width]="width()" class="svg-container">
+  <svg [attr.fill]="fill() || 'currentColor'" [attr.height]="'100%'" [attr.width]="'100%'">
+    <use [attr.xlink:href]="spriteUrl()"></use>
+  </svg>
+</div>

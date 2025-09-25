@@ -1,0 +1,17 @@
+@use 'assets/styles/tokens' as *;
+
+:host {
+  display: block;
+}
+
+.avatar {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  background: $gradient-brand-strong;
+  border-radius: 50%;
+  color: $color-white;
+  font-weight: bold;
+  cursor: pointer;
+}

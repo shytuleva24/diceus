@@ -1,1 +1,24 @@
-<p>button works!</p>
+<button
+  class="btn"
+  [class.btn-primary]="buttonType() === 'primary'"
+  [class.btn-secondary]="buttonType() === 'secondary'"
+  [class.btn-tertiary]="buttonType() === 'tertiary'"
+  [class.btn-outline]="buttonType() === 'outline'"
+  [class.btn-apply]="buttonType() === 'apply'"
+  [class.active]="active()"
+  [disabled]="disabled()"
+>
+  @if (iconId()) {
+    <app-svg-icon
+      class="btn-icon"
+      [iconId]="iconId()!"
+      [width]="iconWidth()"
+      [height]="iconHeight()"
+    ></app-svg-icon>
+  }
+  @if (text()) {
+    {{ text() }}
+  } @else {
+    <ng-content></ng-content>
+  }
+</button>

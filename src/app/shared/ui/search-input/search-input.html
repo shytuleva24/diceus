@@ -1,0 +1,11 @@
+<div class="search-container" [class.with-border]="showBorder()">
+  <input
+    class="search-input"
+    [placeholder]="placeholder()"
+    [value]="value"
+    (input)="onInputChange($event)"
+    [disabled]="disabled"
+    aria-label="Search"
+    [attr.data-testid]="testId()"
+  />
+</div>

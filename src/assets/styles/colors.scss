@@ -1,50 +1,53 @@
 // ======================= PALETTE (primitives) =======================
 // brand
-$color-brand-500: #3B82F6;
-$color-brand-700: #1E40AF;
+$color-brand-500: #3b82f6;
+$color-brand-700: #1e40af;
 
 // neutrals
+$color-neutral-950: #0c0f17;
 $color-neutral-900: #121622;
-$color-neutral-750: #252A3D;
+$color-neutral-750: #252a3d;
 $color-neutral-720: #232838;
-$color-neutral-700: #1E2233;
-$color-neutral-600: #313B54;
+$color-neutral-700: #1e2233;
+$color-neutral-600: #313b54;
 $color-neutral-450: #596275;
-$color-neutral-400: #94A3B8;
-$color-neutral-300: #C5CAD3;
-$color-neutral-100: #E5E7EB;
-$color-white:       #FFFFFF;
+$color-neutral-400: #94a3b8;
+$color-neutral-300: #c5cad3;
+$color-neutral-100: #e5e7eb;
+$color-white: #fff;
 
 // states
-$color-attention-500: #FDD261;
+$color-attention-500: #fdd261;
+$color-apply-500: #3bb979;
 
 // helpers
-$brand-700-30a: rgba($color-brand-700, 0.30);
+$brand-700-30a: rgba($color-brand-700, 0.3);
 
 // ======================= GRADIENTS =======================
 $gradient-brand-strong: linear-gradient(
-    216deg,
-    $color-brand-700 -29.26%,
-    rgba($color-brand-700, 0.30) 93.81%
+  216deg,
+  $color-brand-700 -29.26%,
+  rgba($color-brand-700, 0.3) 93.81%
 );
 
 // ======================= SEMANTIC TOKENS =======================
 // surfaces
-$surface-app:  $color-neutral-900;
+$surface-app: $color-neutral-900;
 $surface-card: $color-neutral-700;
 
 // borders
 $border-default: $color-neutral-600;
 
 // text
-$text-primary:   $color-neutral-100;
-$text-muted:     $color-neutral-300;
-$text-placeholder: rgba($color-neutral-450, 0.50);
+$text-primary: $color-neutral-100;
+$text-muted: $color-neutral-300;
+$text-placeholder: rgba($color-neutral-450, 0.5);
 
 // links
-$link:        $color-neutral-300;
-$link-hover:  $color-white;
+$link: $color-neutral-300;
+$link-hover: $color-white;
 $link-active: $color-white;
+$link-bg: $color-neutral-950;
 
 // brand
 $brand-primary: $color-brand-500;
@@ -52,21 +55,22 @@ $brand-primary: $color-brand-500;
 // ======================= COMPONENT SEMANTICS =======================
 // table
 $table-header-text: $color-neutral-400;
-$table-row-bg:      $color-neutral-750;
-$table-row-alt-bg:  transparent;
-$table-border:      $border-default;
+$table-row-bg: $color-neutral-750;
+$table-row-alt-bg: transparent;
+$table-border: $border-default;
 
 // table actions (кнопка в таблице)
-$btn-table-bg:        $brand-700-30a;
-$btn-table-text:      $color-white;
-$btn-table-hover-bg:  rgba($color-brand-700, .45);
-$btn-table-active-bg: rgba($color-brand-700, .60);
+$btn-table-bg: $brand-700-30a;
+$btn-table-text: $color-white;
+$btn-table-hover-bg: rgba($color-brand-700, 0.45);
+$btn-table-active-bg: rgba($color-brand-700, 0.6);
 
 // inputs
-$input-bg:          $color-neutral-720;
-$input-text:        $text-primary;
-$input-border:      $border-default;
+$input-bg: $color-neutral-720;
+$input-text: $text-primary;
+$input-border: $border-default;
 $input-placeholder: $text-placeholder;
 
 // status / attention
 $status-attention: $color-attention-500;
+$status-apply: $color-apply-500;
