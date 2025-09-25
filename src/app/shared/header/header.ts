@@ -1,7 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal, output, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { SearchInput } from '../ui/search-input/search-input';
+import { Avatar } from '../ui/avatar/avatar';
+import { NavigationItems } from '../../core/models/navigation.model';
+import { MAIN_NAVIGATION } from '../../core/models/navigation-data';
+import { Button } from "../ui/button/button";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +14,10 @@ import { SearchInput } from '../ui/search-input/search-input';
   imports: [
     CommonModule,
     FormsModule,
-    SearchInput
+    RouterModule,
+    SearchInput,
+    Avatar,
+    Button,
   ],
   templateUrl: './header.html',
   styleUrls: ['./header.scss']
@@ -18,6 +26,7 @@ export class Header {
   username = input<string>('');
   openTasks = input<number>(0);
   initials = input<string>('');
+  navItems = signal<NavigationItems>(MAIN_NAVIGATION);
 
   search = signal('');
   searchChange = output<string>();

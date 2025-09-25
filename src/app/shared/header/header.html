@@ -12,9 +12,24 @@
         (ngModelChange)="onSearchChange($event)"
         [testId]="'header-search'">
       </app-search-input>
-      <div class="avatar" data-testid="header-avatar">
-        {{initials()}}
-      </div>
+      <app-avatar
+        [initials]="initials()"
+        size="40px"
+        testId="header-avatar">
+      </app-avatar>
     </div>
   </div>
 </header>
+<nav class="navbar">
+    @for (item of navItems(); track item.name) {
+        <a [routerLink]="item.route" routerLinkActive="active" #rla="routerLinkActive" class="nav-link">
+          <app-button
+            [iconId]="item.iconId"
+            [iconWidth]="item.iconWidth"
+            [iconHeight]="item.iconHeight"
+            [text]="item.name"
+            [active]="rla.isActive"
+          ></app-button>
+        </a>
+    }
+</nav>

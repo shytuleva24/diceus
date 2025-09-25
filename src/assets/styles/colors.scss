@@ -4,6 +4,7 @@ $color-brand-500: #3B82F6;
 $color-brand-700: #1E40AF;
 
 // neutrals
+$color-neutral-950: #0C0F17;
 $color-neutral-900: #121622;
 $color-neutral-750: #252A3D;
 $color-neutral-720: #232838;
@@ -17,6 +18,7 @@ $color-white:       #FFFFFF;
 
 // states
 $color-attention-500: #FDD261;
+$color-apply-500: #3BB979;
 
 // helpers
 $brand-700-30a: rgba($color-brand-700, 0.30);
@@ -45,6 +47,7 @@ $text-placeholder: rgba($color-neutral-450, 0.50);
 $link:        $color-neutral-300;
 $link-hover:  $color-white;
 $link-active: $color-white;
+$link-bg: $color-neutral-950;
 
 // brand
 $brand-primary: $color-brand-500;
@@ -70,3 +73,4 @@ $input-placeholder: $text-placeholder;
 
 // status / attention
 $status-attention: $color-attention-500;
+$status-apply: $color-apply-500;

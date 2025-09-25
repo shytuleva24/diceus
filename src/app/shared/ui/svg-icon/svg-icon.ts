@@ -10,9 +10,10 @@ import { CommonModule } from '@angular/common';
 })
 export class SvgIcon implements OnInit {
   iconId = input<string>('');
-  width = input<string>('24px');
-  height = input<string>('24px');
+  width = input<string | undefined>('24px');
+  height = input<string | undefined>('24px');
   fill = input<string | undefined>(undefined);
+  class = input<string | undefined>(undefined);
 
   private spriteUrlSignal = signal<string>('');
   public readonly spriteUrl = computed(() => this.spriteUrlSignal());

@@ -1,8 +1,5 @@
 @use '../../../assets/styles/tokens' as *;
 
-:host {
-}
-
 .header {
   padding: 16px 24px;
   color: $text-primary;
@@ -42,17 +39,15 @@
   }
 }
 
-
-
-.avatar {
+.navbar {
+  @include container;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: $gradient-brand-strong;
-  color: $color-white;
-  font-weight: bold;
-  flex-shrink: 0;
+  gap: 8px;
+  padding: 17px 21px;
+
+  .nav-link {
+    text-decoration: none;
+    color: inherit;
+  }
 }

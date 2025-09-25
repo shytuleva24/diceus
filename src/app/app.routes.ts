@@ -17,7 +17,7 @@ export const routes: Routes = [
         title: 'Dashboard'
       },
       {
-        path: 'accounts/:id',
+        path: 'accounts',
         loadChildren: () => import('./features/account/routes').then(m => m.routes),
         title: 'Account Details'
       }
