@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { MAIN_NAVIGATION } from '@core/models/navigation-data';
-import { NavigationItems } from '@core/models/navigation.model';
+import { NavigationItems } from '@core/types/navigation.model';
 
 import { Avatar } from '@shared/ui/avatar/avatar';
 import { SearchInput } from '@shared/ui/search-input/search-input';
