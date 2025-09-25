@@ -2,12 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 
 interface NewsItem {
-  title: string;
-  source: string;
-  date: Date;
-  summary: string;
-  url?: string;
-  imageUrl?: string;
+  headline: string;
+  color: string;
 }
 
 @Component({
@@ -18,21 +14,19 @@ interface NewsItem {
   styleUrl: './market-intelligence.scss',
 })
 export class MarketIntelligence {
-  title = input<string>('Market Intelligence');
-  newsItems = input<NewsItem[]>([]);
-  maxItems = input<number>(5);
-
-  openNewsUrl(url?: string): void {
-    if (url) {
-      window.open(url, '_blank');
-    }
-  }
-
-  formatDate(date: Date): string {
-    return date.toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
-    });
-  }
+  title = input<string>('Market intelligence');
+  newsItems = input<NewsItem[]>([
+    {
+      headline: 'Rate hardening in Cyber market - +15% YoY',
+      color: '#B93B3B',
+    },
+    {
+      headline: 'New capacity entering Marine market',
+      color: '#FDD261',
+    },
+    {
+      headline: 'Environmental regulatory changes in CA',
+      color: '#1E40AF',
+    },
+  ]);
 }

@@ -1,0 +1,17 @@
+@use 'assets/styles/tokens' as *;
+
+.actions {
+  &-header {
+    padding-bottom: 20px;
+  }
+
+  &-title {
+    @include faq;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

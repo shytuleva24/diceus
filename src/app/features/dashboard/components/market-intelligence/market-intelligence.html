@@ -1,5 +1,13 @@
-<section class="market-intelligence-container">
-  <header class="market-intelligence-header">
-    <h2 class="market-intelligence-title">{{ title() }}</h2>
+<section class="market">
+  <header class="market-header">
+    <h2 class="market-title">{{ title() }}</h2>
   </header>
+  <ul class="market-list">
+    @for (item of newsItems(); track item.color) {
+      <li class="market-item">
+        <span class="market-item__icon" [style.backgroundColor]="item.color"></span>
+        <p>{{ item.headline }}</p>
+      </li>
+    }
+  </ul>
 </section>

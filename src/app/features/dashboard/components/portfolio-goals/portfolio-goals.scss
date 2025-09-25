@@ -1,0 +1,25 @@
+@use 'assets/styles/tokens' as *;
+
+.goals {
+  &-header {
+    padding-bottom: 30px;
+  }
+
+  &-title {
+    @include faq;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.goal {
+  &-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,11 @@
+@use 'assets/styles/tokens' as *;
+
+.accounts {
+  &-header {
+    padding-bottom: 10px;
+  }
+
+  &-title {
+    @include faq;
+  }
+}
