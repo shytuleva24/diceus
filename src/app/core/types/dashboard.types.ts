@@ -16,6 +16,7 @@ export interface Account {
 }
 
 export interface AccountRow {
+  id: string;
   account: Account;
   line: string;
   broker: string;
@@ -35,6 +36,7 @@ export interface ClientLine {
 }
 
 export interface WorkQueueItem {
+  id: string;
   originator: string;
   clientLine: ClientLine;
   type: string;

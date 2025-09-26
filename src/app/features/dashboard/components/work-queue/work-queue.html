@@ -3,35 +3,40 @@
     <h2 class="work-title">{{ title() }}</h2>
 
     <div class="work-filter">
-      <app-button [active]="true" buttonType="tertiary">All (12)</app-button>
-      <app-button buttonType="tertiary">Assigned to me (12)</app-button>
-      <app-button buttonType="tertiary">Pending Review (8)</app-button>
-      <app-button buttonType="tertiary">Referrals (3)</app-button>
+      @for (tab of viewModel().tabs; track tab.name) {
+        <app-button
+          [active]="viewModel().activeTab === tab.name"
+          buttonType="tertiary"
+          (click)="setActiveTab(tab.name)"
+        >
+          {{ tab.name }} ({{ tab.count }})
+        </app-button>
+      }
     </div>
   </header>
-  <app-smart-table [columns]="columns()" [data]="rows()" density="compact">
-    <ng-template let-c appSmartCell="originator">
+  <app-smart-table [columns]="viewModel().columns" [data]="viewModel().rows" density="compact">
+    <ng-template appSmartCell="originator" let-c>
       <div class="flex items-center gap-3">
         <app-avatar [name]="c.value" size="32px" testId="header-avatar"></app-avatar>
         <span>{{ c.value }}</span>
       </div>
     </ng-template>
 
-    <ng-template let-c appSmartCell="clientLine">
+    <ng-template appSmartCell="clientLine" let-c>
       <div>
         <div class="client">{{ c.value.client }}</div>
         <div class="sub">{{ c.value.line }}</div>
       </div>
     </ng-template>
 
-    <ng-template let-c appSmartCell="status">
+    <ng-template appSmartCell="status" let-c>
       <div class="flex items-center gap-2">
         <span [ngClass]="getStatusClass(c.value)" class="dot"></span>
         <span>{{ c.value }}</span>
       </div>
     </ng-template>
 
-    <ng-template let-c appSmartCell="created">
+    <ng-template appSmartCell="created" let-c>
       {{ c.value | date: 'MM/dd/yyyy' }}
     </ng-template>
   </app-smart-table>

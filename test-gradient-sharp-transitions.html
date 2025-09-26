@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sharp Gradient Bar Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        svg { border: 1px solid #ddd; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Testing Sharp Color Transitions in Gradient Bar</h1>
+
+    <div class="test-section">
+        <h2>Expected Behavior:</h2>
+        <ul>
+            <li>Green (#4CAF50) from 0% to 39% - should end exactly at 39%</li>
+            <li>Yellow (#FFEB3B) from 39% to 60% - should start exactly at 39% and end at 60%</li>
+            <li>Red (#F44336) from 60% to 100% - should start exactly at 60%</li>
+            <li>No smooth transitions - sharp color changes at 39% and 60%</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Test with width=500, height=50:</h2>
+        <p>Segment calculations:</p>
+        <ul>
+            <li>Green: 0% to 39% = 195px width (39% of 500px), x=0</li>
+            <li>Yellow: 39% to 60% = 105px width (21% of 500px), x=195</li>
+            <li>Red: 60% to 100% = 200px width (40% of 500px), x=300</li>
+        </ul>
+
+        <!-- Manual SVG to verify expected output -->
+        <svg height="50" viewBox="0 0 500 50" width="500">
+            <!-- Green segment: 0-39% -->
+            <rect fill="#4CAF50" height="50" width="195" x="0" y="0" rx="4" ry="4"/>
+            <!-- Yellow segment: 39-60% -->
+            <rect fill="#FFEB3B" height="50" width="105" x="195" y="0" rx="0" ry="0"/>
+            <!-- Red segment: 60-100% -->
+            <rect fill="#F44336" height="50" width="200" x="300" y="0" rx="4" ry="4"/>
+
+            <text alignment-baseline="middle" fill="white" font-size="30" font-weight="600" text-anchor="middle" x="250" y="25">48.2%</text>
+        </svg>
+        <p><strong>This shows the expected sharp transitions at exactly 39% and 60%</strong></p>
+    </div>
+
+    <div class="test-section">
+        <h2>Verification Points:</h2>
+        <ul>
+            <li>At pixel 195 (39% of 500px): color should change from green to yellow instantly</li>
+            <li>At pixel 300 (60% of 500px): color should change from yellow to red instantly</li>
+            <li>No gradual color blending between segments</li>
+            <li>First and last segments have rounded corners (rx=4, ry=4)</li>
+            <li>Middle segment has square corners (rx=0, ry=0)</li>
+        </ul>
+    </div>
+</body>
+</html>

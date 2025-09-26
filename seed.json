@@ -9,34 +9,13 @@
       "line": "D&O Liability",
       "broker": "Willis Towers",
       "renewalDate": "2025-04-16",
-      "premium": {
-        "amount": 2.3,
-        "unit": "M",
-        "currency": "USD"
-      },
-      "ratedPremium": {
-        "amount": 2.8,
-        "unit": "M",
-        "currency": "USD"
-      },
-      "lossRatio": {
-        "pct": 32,
-        "tone": "success"
-      },
-      "appetite": {
-        "label": "HIGH",
-        "tone": "success"
-      },
-      "status": {
-        "label": "Active",
-        "tone": "success"
-      },
+      "premium": 2300000,
+      "ratedPremium": 2800000,
+      "lossRatio": 0.32,
+      "appetite": "high",
+      "status": "Active",
       "triage": 180,
-      "winnability": {
-        "score": 4,
-        "max": 5,
-        "label": "Very Strong"
-      }
+      "winnability": "Very Strong"
     },
     {
       "id": "ACC-002",
@@ -47,34 +26,13 @@
       "line": "Medical Malpractice",
       "broker": "Aon Risk",
       "renewalDate": "2025-06-30",
-      "premium": {
-        "amount": 1.7,
-        "unit": "M",
-        "currency": "USD"
-      },
-      "ratedPremium": {
-        "amount": 1.9,
-        "unit": "M",
-        "currency": "USD"
-      },
-      "lossRatio": {
-        "pct": 38,
-        "tone": "warning"
-      },
-      "appetite": {
-        "label": "MEDIUM",
-        "tone": "info"
-      },
-      "status": {
-        "label": "Under review",
-        "tone": "info"
-      },
+      "premium": 1700000,
+      "ratedPremium": 1900000,
+      "lossRatio": 0.38,
+      "appetite": "medium",
+      "status": "Under review",
       "triage": 165,
-      "winnability": {
-        "score": 3,
-        "max": 5,
-        "label": "Strong"
-      }
+      "winnability": "Strong"
     },
     {
       "id": "ACC-003",
@@ -85,34 +43,13 @@
       "line": "Marine Cargo",
       "broker": "Marsh McLennan",
       "renewalDate": "2025-09-05",
-      "premium": {
-        "amount": 875,
-        "unit": "K",
-        "currency": "USD"
-      },
-      "ratedPremium": {
-        "amount": 920,
-        "unit": "K",
-        "currency": "USD"
-      },
-      "lossRatio": {
-        "pct": 25,
-        "tone": "success"
-      },
-      "appetite": {
-        "label": "HIGH",
-        "tone": "success"
-      },
-      "status": {
-        "label": "Active",
-        "tone": "success"
-      },
+      "premium": 875000,
+      "ratedPremium": 920000,
+      "lossRatio": 0.25,
+      "appetite": "high",
+      "status": "Active",
       "triage": 182,
-      "winnability": {
-        "score": 4,
-        "max": 5,
-        "label": "Very Strong"
-      }
+      "winnability": "Very Strong"
     },
     {
       "id": "ACC-004",
@@ -123,34 +60,13 @@
       "line": "Environmental Liability",
       "broker": "Aon Risk",
       "renewalDate": "2025-07-22",
-      "premium": {
-        "amount": 1.2,
-        "unit": "M",
-        "currency": "USD"
-      },
-      "ratedPremium": {
-        "amount": 1.4,
-        "unit": "M",
-        "currency": "USD"
-      },
-      "lossRatio": {
-        "pct": 67,
-        "tone": "danger"
-      },
-      "appetite": {
-        "label": "CAUTIOUS",
-        "tone": "warning"
-      },
-      "status": {
-        "label": "Under review",
-        "tone": "info"
-      },
+      "premium": 1200000,
+      "ratedPremium": 1400000,
+      "lossRatio": 0.67,
+      "appetite": "cautious",
+      "status": "Under review",
       "triage": 158,
-      "winnability": {
-        "score": 2,
-        "max": 5,
-        "label": "Medium"
-      }
+      "winnability": "Medium"
     }
   ],
   "policies": [

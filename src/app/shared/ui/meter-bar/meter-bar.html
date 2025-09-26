@@ -1,0 +1,11 @@
+<div class="bar">
+  <h4 class="bar-title">{{ title() }}</h4>
+  <div class="flex">
+    <div class="bar-container">
+      <div [style.width.%]="percent()" class="bar-fill"></div>
+      <span [style.left.%]="percent()" class="bar-percent"> {{ percent() }}%</span>
+      <span [style.left.%]="percent()" class="bar-passed"> {{ passed() }}</span>
+    </div>
+    <span class="bar-goal"> {{ goal() }}</span>
+  </div>
+</div>

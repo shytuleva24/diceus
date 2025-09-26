@@ -9,3 +9,6 @@ export * from './table.types';
 
 // UI types
 export * from './ui.types';
+
+// Portfolio types
+export * from './portfolio.types';

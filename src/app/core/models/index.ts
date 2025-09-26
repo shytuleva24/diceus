@@ -9,3 +9,6 @@ export * from './navigation-data';
 
 // Work queue data
 export * from './work-queue-data';
+
+// Portfolio data
+export * from './portfolio-goals-data';

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, input } from '@angular/core';
+import { Component, forwardRef, input, output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -25,6 +25,8 @@ export class SearchInput implements ControlValueAccessor {
   placeholder = input<string>('Search');
   testId = input<string>('search-input');
 
+  valueChange = output<string>();
+
   value = '';
   disabled = false;
 
@@ -49,6 +51,7 @@ export class SearchInput implements ControlValueAccessor {
     this.value = value;
     this.onChange(value);
     this.onTouched();
+    this.valueChange.emit(value);
   }
 
   protected onChange: (value: string) => void = () => {
