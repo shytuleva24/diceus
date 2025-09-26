@@ -18,6 +18,11 @@
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 
+  &.small {
+    padding: 4px 30px;
+    font-size: 14px;
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -75,7 +80,7 @@
   // Type 3: Tertiary button
   &.btn-tertiary {
     background-color: $link-bg;
-    border-color: $border-default;
+    border-color: transparent;
     color: $text-muted;
 
     .btn-icon {

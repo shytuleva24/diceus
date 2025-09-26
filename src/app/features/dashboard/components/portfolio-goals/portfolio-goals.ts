@@ -1,12 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 
-interface Goal {
-  name: string;
-  currentValue: number;
-  targetValue: number;
-  unit?: string;
-}
+import { Goal } from '@core/types/dashboard.types';
 
 @Component({
   selector: 'app-portfolio-goals',

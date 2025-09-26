@@ -1,12 +1,13 @@
 <button
-  class="btn"
+  [class.active]="active()"
+  [class.btn-apply]="buttonType() === 'apply'"
+  [class.btn-outline]="buttonType() === 'outline'"
   [class.btn-primary]="buttonType() === 'primary'"
   [class.btn-secondary]="buttonType() === 'secondary'"
   [class.btn-tertiary]="buttonType() === 'tertiary'"
-  [class.btn-outline]="buttonType() === 'outline'"
-  [class.btn-apply]="buttonType() === 'apply'"
-  [class.active]="active()"
+  [class.small]="isSmall()"
   [disabled]="disabled()"
+  class="btn"
 >
   @if (iconId()) {
     <app-svg-icon

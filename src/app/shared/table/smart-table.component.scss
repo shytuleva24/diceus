@@ -1,0 +1,77 @@
+@use 'assets/styles/tokens' as *;
+
+:host {
+  --row-h: 60px;
+  --pad: 16px;
+  display: block;
+  overflow: auto;
+}
+
+:host(.compact) {
+  --row-h: 32px;
+  --pad: 8px;
+}
+
+cdk-table {
+  @include label;
+  display: table;
+  width: 100%;
+  color: $text-primary;
+  font-size: 13px;
+  font-weight: 300;
+  border-collapse: collapse;
+}
+
+cdk-header-cell,
+cdk-cell {
+  display: table-cell;
+  box-sizing: border-box;
+  height: var(--row-h);
+  padding: 0 var(--pad);
+  border-bottom: 1px solid #293245;
+  vertical-align: middle;
+}
+
+cdk-header-cell {
+  @include label;
+  height: 32px;
+  background-color: $table-row-bg;
+  color: $table-header-text;
+  text-transform: uppercase;
+}
+
+cdk-row {
+  display: table-row;
+  min-height: var(--row-h);
+  border: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
+  &:nth-child(odd) {
+    background-color: $input-bg;
+  }
+}
+
+cdk-header-row {
+  display: table-row;
+  min-height: 32px;
+  border: none;
+  white-space: nowrap;
+}
+
+cdk-row:hover {
+  background-color: $table-row-bg;
+}
+
+/* Alignment classes */
+.align-start {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-end {
+  text-align: right;
+}

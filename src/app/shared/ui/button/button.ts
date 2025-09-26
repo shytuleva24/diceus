@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 
-import { SvgIcon } from '@shared/ui/svg-icon/svg-icon';
+import { ButtonType } from '@core/types/ui.types';
 
-export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'outline' | 'apply';
+import { SvgIcon } from '@shared/ui/svg-icon/svg-icon';
 
 @Component({
   selector: 'app-button',
@@ -16,6 +16,7 @@ export class Button {
   buttonType = input<ButtonType>('primary');
   disabled = input<boolean>(false);
   active = input<boolean | undefined>(false);
+  isSmall = input<boolean | undefined>(false);
 
   // Icon properties
   iconId = input<string | undefined>(undefined);

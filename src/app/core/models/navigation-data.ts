@@ -1,4 +1,4 @@
-import { NavigationItems } from '@core/types/navigation.model';
+import { NavigationItems } from '@core/types/navigation.types';
 
 /**
  * Sample navigation data for the application.

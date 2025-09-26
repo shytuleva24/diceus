@@ -2,10 +2,128 @@
 
 .accounts {
   &-header {
-    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 24px;
+  }
+
+  &-actions {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
   }
 
   &-title {
     @include faq;
+
+    white-space: nowrap;
+  }
+
+  &-search {
+    flex: 1;
+    max-width: 250px;
+  }
+}
+
+.sub {
+  color: $table-header-text;
+  font-size: 12px;
+}
+
+.premium {
+  color: $brand-primary;
+  font-weight: 500;
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #fff;
+
+  &--danger {
+    background-color: $status-attention;
+    color: #041b2e;
+  }
+
+  &--success {
+    background-color: $status-apply;
+  }
+
+  &--warning {
+    background-color: #b93b3b;
+  }
+
+  &--outline {
+    width: 100%;
+    background-color: $brand-700-30a;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &--triage {
+    border: 1px solid $brand-primary;
+    color: $brand-primary;
+  }
+}
+
+.status,
+.winn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+
+  &__label {
+    white-space: nowrap;
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: $color-brand-700;
+  border-radius: 50%;
+
+  &--success {
+    background-color: $status-apply;
+  }
+
+  &--winn {
+    background-color: $brand-primary;
+  }
+}
+
+@media (width <= 900px) {
+  .accounts {
+    &-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+}
+
+@media (width <= 750px) {
+  .accounts {
+    &-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 }
