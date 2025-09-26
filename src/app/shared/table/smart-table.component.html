@@ -1,0 +1,47 @@
+<cdk-table
+  [class.compact]="density() === 'compact'"
+  [dataSource]="data()"
+  [trackBy]="getTrackByFn()"
+>
+  @for (col of columns(); track col.key) {
+    <ng-container [cdkColumnDef]="col.key">
+      <cdk-header-cell
+        *cdkHeaderCellDef
+        [class]="'align-' + (col.align || 'start')"
+        [style.width]="col.width"
+      >
+        {{ col.header }}
+      </cdk-header-cell>
+
+      <cdk-cell
+        *cdkCellDef="let row"
+        [class]="'align-' + (col.align || 'start')"
+        [style.width]="col.width"
+      >
+        @if (cellTemplatesDictionary()[col.key]; as template) {
+          <ng-container
+            *ngTemplateOutlet="
+              template;
+              context: { $implicit: { row: row, value: row[col.key], col: col } }
+            "
+          >
+          </ng-container>
+        } @else {
+          {{ row[col.key] }}
+        }
+      </cdk-cell>
+    </ng-container>
+  }
+
+  <ng-container cdkColumnDef="actions">
+    <cdk-header-cell *cdkHeaderCellDef class="align-center" style="width: 48px"> </cdk-header-cell>
+
+    <cdk-cell *cdkCellDef="let row" class="align-center" style="width: 48px">
+      <app-svg-icon iconId="tableActions" />
+    </cdk-cell>
+  </ng-container>
+
+  <cdk-header-row *cdkHeaderRowDef="allColKeys()"></cdk-header-row>
+
+  <cdk-row (click)="onRowClick(row)" *cdkRowDef="let row; columns: allColKeys()"> </cdk-row>
+</cdk-table>

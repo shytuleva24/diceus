@@ -1,0 +1,28 @@
+<section class="goals-container">
+  <header class="goals-header">
+    <h2 class="goals-title">{{ title() }}</h2>
+  </header>
+  <div class="goals-content">
+    @for (goal of portfolioGoals(); track goal.title) {
+      <div class="goal-section">
+        @switch (goal.type) {
+          @case ('gradient') {
+            <app-gradient-bar
+              [config]="goal.config"
+              [percent]="goal.percent"
+              [title]="goal.title"
+            />
+          }
+          @case ('meter') {
+            <app-meter-bar
+              [percent]="goal.percent"
+              [goal]="goal.goal"
+              [passed]="goal.passed"
+              [title]="goal.title"
+            />
+          }
+        }
+      </div>
+    }
+  </div>
+</section>

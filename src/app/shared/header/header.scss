@@ -5,21 +5,17 @@
   top: 0;
   z-index: 10;
   width: 100%;
-  padding: 16px 24px;
+  padding: 16px 0;
   border-bottom: 1px solid $border-default;
   color: $text-primary;
-
-  @media (width <= 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
 
   &-container {
     @include container;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
   }
 
   &-welcome {
@@ -30,11 +26,15 @@
 
   &-actions {
     display: flex;
+    flex: 1;
+    justify-content: flex-end;
     align-items: center;
     gap: 16px;
 
-    @media (width <= 768px) {
+    app-search-input {
+      display: block;
       width: 100%;
+      max-width: 485px;
     }
   }
 }
@@ -44,10 +44,35 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 17px 21px;
+  margin-bottom: 10px;
+  padding: 17px 21px 7px;
+  overflow: auto;
 
   .nav-link {
     color: inherit;
     text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+@media (width <= 950px) {
+  .header {
+    &-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &-actions {
+      justify-content: flex-start;
+      width: 100%;
+    }
+  }
+}
+
+@media (width <= 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 }

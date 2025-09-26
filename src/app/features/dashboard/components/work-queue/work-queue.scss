@@ -1,0 +1,55 @@
+@use 'assets/styles/tokens' as *;
+
+.work {
+  &-title {
+    @include faq;
+  }
+
+  &-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0 20px;
+  }
+}
+
+// Utility classes
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-3 {
+  gap: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: $brand-primary;
+  border-radius: 50%;
+
+  &.pending {
+    background-color: $status-attention;
+  }
+
+  &.completed {
+    background-color: $status-apply;
+  }
+}
+
+.client {
+  line-height: 100%;
+}
+
+.sub {
+  color: $table-header-text;
+  font-size: 12px;
+}

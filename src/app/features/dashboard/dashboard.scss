@@ -1,0 +1,77 @@
+@use 'assets/styles/tokens' as *;
+
+.dashboard {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 120px;
+
+  &-row {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+  }
+
+  &-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    &.work {
+      max-width: 798px;
+    }
+
+    &:not(:first-child) {
+      max-width: 285px;
+    }
+  }
+
+  &-card {
+    @include card;
+  }
+}
+
+@media (width <= 1250px) {
+  .dashboard {
+    &-row {
+      flex-wrap: wrap;
+    }
+
+    &-col {
+      &.goals {
+        width: 50%;
+        max-width: 50%;
+      }
+
+      &.side {
+        flex: 1;
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+@media (width <= 555px) {
+  .dashboard {
+    &-row {
+      flex-wrap: wrap;
+    }
+
+    &-col {
+      flex-direction: column;
+
+      &.goals {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      &.side {
+        flex: 1;
+        max-width: 100%;
+      }
+    }
+  }
+}

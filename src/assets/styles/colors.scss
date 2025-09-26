@@ -19,6 +19,7 @@ $color-white: #fff;
 // states
 $color-attention-500: #fdd261;
 $color-apply-500: #3bb979;
+$color-red-500: #c90d0d;
 
 // helpers
 $brand-700-30a: rgba($color-brand-700, 0.3);
@@ -59,7 +60,7 @@ $table-row-bg: $color-neutral-750;
 $table-row-alt-bg: transparent;
 $table-border: $border-default;
 
-// table actions (кнопка в таблице)
+// table actions
 $btn-table-bg: $brand-700-30a;
 $btn-table-text: $color-white;
 $btn-table-hover-bg: rgba($color-brand-700, 0.45);
@@ -74,3 +75,4 @@ $input-placeholder: $text-placeholder;
 // status / attention
 $status-attention: $color-attention-500;
 $status-apply: $color-apply-500;
+$status-red: $color-red-500;

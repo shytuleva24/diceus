@@ -1,26 +1,160 @@
 {
   "accounts": [
-    { "id": 101, "name": "Maritime Logistics Corp", "status": "Active",
-      "segment": "Shipping/Logistics", "owner": "Marcin McLennan",
-      "winnability": 0.82, "triage": 180 }
+    {
+      "id": "ACC-001",
+      "account": {
+        "name": "NAMEX Tech Solutions",
+        "type": "Large Enterprise"
+      },
+      "line": "D&O Liability",
+      "broker": "Willis Towers",
+      "renewalDate": "2025-04-16",
+      "premium": 2300000,
+      "ratedPremium": 2800000,
+      "lossRatio": 0.32,
+      "appetite": "high",
+      "status": "Active",
+      "triage": 180,
+      "winnability": "Very Strong"
+    },
+    {
+      "id": "ACC-002",
+      "account": {
+        "name": "Alliance Healthcare Systems",
+        "type": "Mid-Market"
+      },
+      "line": "Medical Malpractice",
+      "broker": "Aon Risk",
+      "renewalDate": "2025-06-30",
+      "premium": 1700000,
+      "ratedPremium": 1900000,
+      "lossRatio": 0.38,
+      "appetite": "medium",
+      "status": "Under review",
+      "triage": 165,
+      "winnability": "Strong"
+    },
+    {
+      "id": "ACC-003",
+      "account": {
+        "name": "Maritime Logistics Corp",
+        "type": "Shipping/Logistics"
+      },
+      "line": "Marine Cargo",
+      "broker": "Marsh McLennan",
+      "renewalDate": "2025-09-05",
+      "premium": 875000,
+      "ratedPremium": 920000,
+      "lossRatio": 0.25,
+      "appetite": "high",
+      "status": "Active",
+      "triage": 182,
+      "winnability": "Very Strong"
+    },
+    {
+      "id": "ACC-004",
+      "account": {
+        "name": "GreenField Energy Ltd",
+        "type": "Energy Sector"
+      },
+      "line": "Environmental Liability",
+      "broker": "Aon Risk",
+      "renewalDate": "2025-07-22",
+      "premium": 1200000,
+      "ratedPremium": 1400000,
+      "lossRatio": 0.67,
+      "appetite": "cautious",
+      "status": "Under review",
+      "triage": 158,
+      "winnability": "Medium"
+    }
   ],
   "policies": [
-    { "id": 5001, "accountId": 101, "policyNo": "PL-2025-0001",
-      "lob": "Property", "premium": 12500, "status": "Active",
-      "effective": "2025-09-01", "expiration": "2026-08-31" }
+    {
+      "id": 5001,
+      "accountId": 101,
+      "policyNo": "PL-2025-0001",
+      "lob": "Property",
+      "premium": 12500,
+      "status": "Active",
+      "effective": "2025-09-01",
+      "expiration": "2026-08-31"
+    }
   ],
   "workQueue": [
-    { "id": 1, "type": "Underwriter Referral", "client": "NAMEK Tech Solutions",
-      "status": "New", "created": "2025-04-16" }
+    {
+      "id": "WQ-001",
+      "originator": "Sam Masters",
+      "clientLine": {
+        "client": "NAMEX Tech Solutions",
+        "line": "Cyber Liability"
+      },
+      "type": "Underwriter Referral",
+      "status": "New",
+      "created": "2025-04-16"
+    },
+    {
+      "id": "WQ-002",
+      "originator": "Annalise Willis",
+      "clientLine": {
+        "client": "Maritime Logistics Corp",
+        "line": "Marine Cargo"
+      },
+      "type": "Underwriter Referral",
+      "status": "New",
+      "created": "2025-04-20"
+    },
+    {
+      "id": "WQ-003",
+      "originator": "Patrick Devenport",
+      "clientLine": {
+        "client": "GreenField Energy Ltd",
+        "line": "Environmental"
+      },
+      "type": "Loss Control Request",
+      "status": "New",
+      "created": "2025-04-16"
+    },
+    {
+      "id": "WQ-004",
+      "originator": "Ana Killian",
+      "clientLine": {
+        "client": "NorthStar Financial Group",
+        "line": "D&O Liability"
+      },
+      "type": "Underwriter Referral",
+      "status": "Pending Review",
+      "created": "2025-04-22"
+    },
+    {
+      "id": "WQ-005",
+      "originator": "Ana Killian",
+      "clientLine": {
+        "client": "Alliance Healthcare Systems",
+        "line": "Medical Malpractice"
+      },
+      "type": "Email",
+      "status": "Completed",
+      "created": "2025-04-28"
+    },
+    {
+      "id": "WQ-006",
+      "originator": "Me",
+      "clientLine": {
+        "client": "QuantumTech Industries",
+        "line": "Product Liability"
+      },
+      "type": "Email",
+      "status": "Completed",
+      "created": "2025-04-20"
+    }
   ],
   "news": [
-    { "id": 1, "title": "Rate hardening in Cyber market +15% YoY",
-      "source": "MarketWatch", "publishedAt": "2025-08-31T10:00:00Z" }
-  ],
-  "goals": {
-    "lossRatio": { "actual": 48.8, "target": 45 },
-    "renewal":   { "actual": 88,  "target": 90 },
-    "newBiz":    { "actual": 8.1, "target": 12 },
-    "gwp":       { "actual": 28.8, "target": 42.4 }
-  }
+    {
+      "id": 1,
+      "title": "Reinsurance rates trend up",
+      "source": "MarketWatch",
+      "publishedAt": "2025-08-31T10:00:00Z"
+    }
+  ]
 }

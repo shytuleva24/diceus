@@ -1,0 +1,84 @@
+<section class="accounts-container">
+  <header class="accounts-header">
+    <h2 class="accounts-title">{{ title() }}</h2>
+    <div class="accounts-actions">
+      <div class="accounts-search">
+        <app-search-input
+          height="28px"
+          (valueChange)="updateFilter($event)"
+          placeholder="Search accounts..."
+        />
+      </div>
+      <div class="accounts-buttons">
+        <app-button [isSmall]="true" buttonType="outline">Filter</app-button>
+        <app-button [isSmall]="true" buttonType="outline">Sort</app-button>
+        <app-button [isSmall]="true" buttonType="outline">Group</app-button>
+        <app-button [isSmall]="true" buttonType="secondary">+ New</app-button>
+      </div>
+    </div>
+  </header>
+
+  <app-smart-table [columns]="viewModel().columns" [data]="viewModel().rows" density="compact">
+    <ng-template let-c appSmartCell="account">
+      <div class="account">
+        <div>{{ c.value.name }}</div>
+        <div class="sub">{{ c.value.type }}</div>
+      </div>
+    </ng-template>
+
+    <ng-template let-c appSmartCell="renewalDate">
+      {{ c.value | date: 'MM/dd/yyyy' }}
+    </ng-template>
+
+    <ng-template let-c appSmartCell="premium">
+      <span class="premium">
+        {{ c.value | currency }}
+      </span>
+    </ng-template>
+
+    <ng-template let-c appSmartCell="ratedPremium">
+      <span class="money">
+        {{ c.value | currency }}
+      </span>
+    </ng-template>
+
+    <ng-template let-c appSmartCell="lossRatio">
+      <span
+        [class.pill--danger]="c.value < 0.5 && c.value > 0.35"
+        [class.pill--success]="c.value <= 0.35"
+        [class.pill--warning]="c.value >= 0.5"
+        class="pill"
+      >
+        {{ c.value * 100 }}%
+      </span>
+    </ng-template>
+
+    <ng-template let-c appSmartCell="appetite">
+      <span class="pill pill--outline">
+        {{ c.value }}
+      </span>
+    </ng-template>
+
+    <ng-template let-c appSmartCell="status">
+      <span class="status">
+        <i [class.dot--success]="c.value === 'Active'" class="dot"></i>
+        <span class="status__label">{{ c.value }}</span>
+      </span>
+    </ng-template>
+
+    <ng-template let-c appSmartCell="triage">
+      <span class="pill pill--triage">{{ c.value }}</span>
+    </ng-template>
+
+    <ng-template let-c appSmartCell="winnability">
+      <div class="winn pill pill--triage">
+        <div class="dots">
+          @for (_ of [1, 2, 3, 4]; track _) {
+            <span class="dot dot--winn"></span>
+          }
+        </div>
+        <span class="winn__label">{{ c.value }}</span>
+      </div>
+    </ng-template>
+  </app-smart-table>
+</section>

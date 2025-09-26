@@ -1,18 +1,18 @@
-<header role="banner" class="header">
+<header class="header" role="banner">
   <div class="header-container">
     <div class="header-welcome">
       <h1>Hi {{ username() }}, welcome! You have {{ openTasks() }} open tasks.</h1>
     </div>
     <div class="header-actions">
       <app-search-input
-        class="search"
-        height="48px"
+        (ngModelChange)="onSearchChange($event)"
+        [ngModel]="search()"
         [showBorder]="false"
         [testId]="'header-search'"
-        [ngModel]="search()"
-        (ngModelChange)="onSearchChange($event)"
+        class="search"
+        height="48px"
       ></app-search-input>
-      <app-avatar size="40px" testId="header-avatar" [initials]="initials()"></app-avatar>
+      <app-avatar [name]="username()" size="40px" testId="header-avatar"></app-avatar>
     </div>
   </div>
 </header>

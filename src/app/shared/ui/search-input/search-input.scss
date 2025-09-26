@@ -8,13 +8,13 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  width: 480px;
+  width: 100%;
+  max-width: 485px;
   height: var(--search-input-height);
   padding: 0 16px;
   background-color: $input-bg;
   border: 1px solid transparent;
   border-radius: 40px;
-  transition: all 0.3s ease-in-out;
 
   &.with-border {
     border: 1px solid $border-default;
