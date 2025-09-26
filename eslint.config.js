@@ -164,6 +164,10 @@ module.exports = tseslint.config(
             match: true,
           },
         },
+        {
+          selector: 'objectLiteralProperty',
+          format: null,
+        },
       ],
       'brace-style': ['error', '1tbs', { allowSingleLine: true }],
       'no-empty': ['error', { allowEmptyCatch: true }],
