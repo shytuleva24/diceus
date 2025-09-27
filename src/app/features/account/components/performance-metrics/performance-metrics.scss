@@ -1,0 +1,95 @@
+@use 'assets/styles/tokens' as *;
+
+.performance {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media (width <= 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    grid-template-columns: 1fr;
+  }
+
+  &__label {
+    @include faq;
+    font-weight: 300;
+  }
+
+  &__card {
+    @include card;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+
+    &--exposure {
+      max-height: 178px;
+    }
+  }
+
+  &__value {
+    @include h1;
+    color: $text-primary;
+    font-weight: 300;
+  }
+
+  &__link {
+    color: $brand-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 10px;
+    color: $text-primary;
+  }
+
+  &__sub,
+  &__note {
+    @include body-text;
+    margin-bottom: 5px;
+    color: $text-muted;
+    font-weight: 300;
+
+    &--with-spacing {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__value-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+  }
+}
+
+.exposure {
+  &__bars {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.rating-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: $color-brand-700;
+    border-radius: 50%;
+  }
+}

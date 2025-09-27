@@ -15,12 +15,12 @@ $font-system-stack:
 
 @mixin h1 {
   font-family: $font-system-stack;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 500;
   line-height: 120%;
 
   @media (max-width: $mobile-breakpoint) {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
