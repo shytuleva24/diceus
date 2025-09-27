@@ -1,10 +1,18 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
+import { SmartTableComponent } from '@shared/table/smart-table.component';
+
+import { AccountInfo } from '@features/account/components/account-info/account-info';
+import { Communication } from '@features/account/components/communication/communication';
+import { Details } from '@features/account/components/details/details';
+import { PerformanceMetrics } from '@features/account/components/performance-metrics/performance-metrics';
+import { Policies } from '@features/account/components/policies/policies';
+
 @Component({
   selector: 'app-account',
   standalone: true,
-  imports: [],
+  imports: [AccountInfo, PerformanceMetrics, SmartTableComponent, Details, Policies, Communication],
   templateUrl: './account.html',
   styleUrl: './account.scss',
 })

@@ -2,11 +2,42 @@
 
 .account {
   @include container;
+  @include body-text;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  color: $text-primary;
 
   &-card {
     @include card;
+  }
+
+  &-title {
+    @include faq;
+    margin-bottom: 20px;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &-breadcrumb {
+    @include body-text;
+    color: $text-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      color: $brand-primary;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
