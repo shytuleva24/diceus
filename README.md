@@ -42,18 +42,20 @@ npm start  # Runs on http://localhost:4200
 ## 🧪 Testing
 
 - **Unit Tests:** Jasmine/Karma (`npm test`)
-- **Coverage:** Focus on core business logic
 
 ## ✅ Implementation Status
 
-**Dashboard:** Navigation, work queue, portfolio goals, market intelligence, accounts table
-**Account Detail:** Performance metrics, policies, compliance, winnability, communication
-**Technical:** Standalone components, lazy routes, signals, value accessor for inputs, basic responsive design
-**Note:** Adaptive layout is implemented as a quick solution; further improvements planned.
-**Plans:**
+- **Dashboard:** Navigation, work queue, portfolio goals, market intelligence, accounts table
+- **Account Detail:** Performance metrics, policies, compliance, winnability, communication
+- **Technical:** Standalone components, lazy routes, signals, value accessor for inputs, basic responsive design
+- **Note:** Adaptive layout is implemented as a quick solution; further improvements planned.
+
+
+## ✅**Plans:**
 
 - Cover remaining blocks with Cypress tests
 - Implement navigation to account page with dynamic id
+- Complete remaining Account blocks not finished due to timebox
 
 ## 📝 Architecture
 
