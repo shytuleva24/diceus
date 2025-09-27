@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import 'zone.js';
 import { MeterBar } from './meter-bar';
 
 describe('MeterBar', () => {
