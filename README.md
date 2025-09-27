@@ -1,59 +1,65 @@
-# Diceus
+# Insurance Dashboard & Account Management System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+Angular 20+ dashboard for insurance underwriting workflows with standalone components and signals-based state management.
 
-## Development server
+## 🚀 Live Demo
 
-To start a local development server, run:
+**Deployed:** [https://diceus-dashboard.vercel.app](https://diceus-dashboard.vercel.app)
 
-```bash
-ng serve
-```
+## 🛠 Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Angular:** 20.3.x with standalone components
+- **TypeScript:** 5.9.x (strict mode)
+- **State Management:** Angular Signals (no global store)
+- **Charts:** Chart.js with ng2-charts
+- **Testing:** Jasmine/Karma unit tests
+- **Mock API:** jsonbin
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚦 Getting Started
 
 ```bash
-ng generate --help
+git clone <repository-url>
+cd diceus
+npm install
+npm start  # Runs on http://localhost:4200
 ```
 
-## Building
+## 🎯 State Management: Angular Signals (No Global Store)
 
-To build the project run:
+**Why no global store?** For small applications like this, a global store (NgRx) would add unnecessary complexity and boilerplate code without significant benefits. Signals provide reactive state management with better performance and simpler testing.
 
-```bash
-ng build
+## 🌐 Data Fetching & Caching
+
+- **shareReplay()** for Observable caching
+- **toSignal()** for reactive template consumption
+- HTTP interceptors for error handling
+
+## 🤖 AI Tools Used
+
+- GitHub Copilot
+- ChatGPT
+
+## 🧪 Testing
+
+- **Unit Tests:** Jasmine/Karma (`npm test`)
+- **Coverage:** Focus on core business logic
+
+## ✅ Implementation Status
+
+**Dashboard:** Navigation, work queue, portfolio goals, market intelligence, accounts table
+**Account Detail:** Performance metrics, policies, compliance, winnability, communication
+**Technical:** Standalone components, lazy routes, signals, value accessor for inputs, basic responsive design
+**Note:** Adaptive layout is implemented as a quick solution; further improvements planned.
+**Plans:**
+
+- Cover remaining blocks with Cypress tests
+- Implement navigation to account page with dynamic id
+
+## 📝 Architecture
+
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+src/app/
+├── core/      # Guards, services, interceptors
+├── features/  # Dashboard, account (lazy-loaded)
+└── shared/    # Reusable UI components
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
