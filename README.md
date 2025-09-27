@@ -50,12 +50,12 @@ npm start  # Runs on http://localhost:4200
 - **Technical:** Standalone components, lazy routes, signals, value accessor for inputs, basic responsive design
 - **Note:** Adaptive layout is implemented as a quick solution; further improvements planned.
 
-
-## ✅**Plans:**
-
-- Cover remaining blocks with Cypress tests
-- Implement navigation to account page with dynamic id
-- Complete remaining Account blocks not finished due to timebox
+## ⚠️ Next Steps
+- Complete remaining Account blocks not finished within the timebox  
+- Implement navigation to the Account page with a dynamic ID  
+- Expand unit test coverage and add e2e tests  
+- Improve responsive layout (desktop/tablet/mobile)  
+- Add smooth animations for skeletons and loaders  
 
 ## 📝 Architecture
 
