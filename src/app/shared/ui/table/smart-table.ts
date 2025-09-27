@@ -21,19 +21,19 @@ import { SvgIcon } from '@shared/ui/svg-icon/svg-icon';
   standalone: true,
   imports: [CommonModule, CdkTableModule, SvgIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './smart-table.component.html',
-  styleUrl: './smart-table.component.scss',
+  templateUrl: './smart-table.html',
+  styleUrl: './smart-table.scss',
 })
-export class SmartTableComponent {
+export class SmartTable<T> {
   cellTemplates = contentChildren(SmartCellDirective);
 
-  data = input<unknown[]>([]);
+  data = input<T[]>([]);
   columns = input<ColumnDef[]>([]);
-  trackBy = input<((index: number, row: unknown) => unknown) | null>(null);
+  trackBy = input<((index: number, row: T) => unknown) | null>(null);
   stickyHeader = input<boolean>(true);
   density = input<'compact' | 'regular'>('compact');
 
-  rowClick = output<unknown>();
+  rowClick = output<T>();
 
   colKeys = computed(() => this.columns().map((col) => col.key));
   allColKeys = computed(() => [...this.colKeys(), 'actions']);
@@ -52,7 +52,7 @@ export class SmartTableComponent {
     return this.trackBy() || ((i: number) => i);
   }
 
-  onRowClick(row: unknown) {
+  onRowClick(row: T) {
     this.rowClick.emit(row);
   }
 }

@@ -6,9 +6,9 @@ import { SmartCellDirective } from '@core/directives/smart-cell.directive';
 import { CurrencyPipe } from '@core/pipes/currency.pipe';
 import { AccountsFacade } from '@core/services/accounts.facade';
 
-import { SmartTableComponent } from '@shared/table/smart-table.component';
 import { Button } from '@shared/ui/button/button';
 import { SearchInput } from '@shared/ui/search-input/search-input';
+import { SmartTable } from '@shared/ui/table/smart-table';
 import { WinnabilityDots } from '@shared/ui/winnability-dots/winnability-dots';
 
 @Component({
@@ -17,7 +17,7 @@ import { WinnabilityDots } from '@shared/ui/winnability-dots/winnability-dots';
   imports: [
     CommonModule,
     FormsModule,
-    SmartTableComponent,
+    SmartTable,
     SmartCellDirective,
     CurrencyPipe,
     SearchInput,

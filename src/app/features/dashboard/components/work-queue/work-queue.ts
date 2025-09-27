@@ -4,14 +4,14 @@ import { Component, inject, input } from '@angular/core';
 import { SmartCellDirective } from '@core/directives/smart-cell.directive';
 import { WorkQueueFacade } from '@core/services/work-queue.facade';
 
-import { SmartTableComponent } from '@shared/table/smart-table.component';
 import { Avatar } from '@shared/ui/avatar/avatar';
 import { Button } from '@shared/ui/button/button';
+import { SmartTable } from '@shared/ui/table/smart-table';
 
 @Component({
   selector: 'app-work-queue',
   standalone: true,
-  imports: [CommonModule, SmartTableComponent, SmartCellDirective, Avatar, Button],
+  imports: [CommonModule, SmartTable, SmartCellDirective, Avatar, Button],
   templateUrl: './work-queue.html',
   styleUrl: './work-queue.scss',
 })
