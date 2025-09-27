@@ -4,7 +4,7 @@ Angular 20+ dashboard for insurance underwriting workflows with standalone compo
 
 ## 🚀 Live Demo
 
-**Deployed:** [https://diceus-dashboard.vercel.app](https://diceus-dashboard.vercel.app)
+**Deployed:** [https://diceus-one.vercel.app/dashboard](https://diceus-one.vercel.app/dashboard)
 
 ## 🛠 Tech Stack
 
