@@ -1,0 +1,10 @@
+<div class="winn" [class.pill]="showBorder()" [class.pill--triage]="showBorder()">
+  <div class="dots">
+    @for (_ of dotsArray(); track $index) {
+      <span class="dot dot--winn"></span>
+    }
+  </div>
+  @if (showLabel()) {
+    <span class="winn__label">{{ value() }}</span>
+  }
+</div>

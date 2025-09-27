@@ -9,6 +9,7 @@ import { AccountsFacade } from '@core/services/accounts.facade';
 import { SmartTableComponent } from '@shared/table/smart-table.component';
 import { Button } from '@shared/ui/button/button';
 import { SearchInput } from '@shared/ui/search-input/search-input';
+import { WinnabilityDots } from '@shared/ui/winnability-dots/winnability-dots';
 
 @Component({
   selector: 'app-my-accounts',
@@ -21,6 +22,7 @@ import { SearchInput } from '@shared/ui/search-input/search-input';
     CurrencyPipe,
     SearchInput,
     Button,
+    WinnabilityDots,
   ],
   templateUrl: './my-accounts.html',
   styleUrl: './my-accounts.scss',
@@ -31,5 +33,4 @@ export class MyAccounts {
   readonly viewModel = this._facade.viewModel;
 
   updateFilter = (filter: string) => this._facade.updateFilter(filter);
-  clearFilter = () => this._facade.clearFilter();
 }

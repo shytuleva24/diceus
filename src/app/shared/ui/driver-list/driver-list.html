@@ -1,0 +1,31 @@
+<header [ngClass]="theme()" class="driver-list__head">
+  @if (icon()) {
+    <app-svg-icon
+      [ngClass]="{ down: icon() === 'down' }"
+      height="26px"
+      iconId="driver-arrow"
+      width="26px"
+    />
+  }
+  <h3 class="driver-list__title">{{ title() }}</h3>
+</header>
+
+<ul [ngClass]="theme()" class="driver-list__list" role="list">
+  @for (it of normalized(); let i = $index; track i) {
+    <li class="driver-list__item">
+      <div class="driver-list__rank">
+        <span>{{ it.rank }}</span>
+      </div>
+      <div class="driver-list__content">
+        <div class="driver-list__name">{{ it.name }}</div>
+        <div class="driver-list__bar-container">
+          <div class="driver-list__bar">
+            <div class="driver-list__fill" [style.width.%]="it.value * 100">
+              <div class="driver-list__delta">{{ it.deltaDisplay }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  }
+</ul>

@@ -3,10 +3,11 @@ import { Component, inject } from '@angular/core';
 import { PerformanceMetricsFacade } from '@core/services/performance-metrics.facade';
 
 import { MeterBar } from '@shared/ui/meter-bar/meter-bar';
+import { WinnabilityDots } from '@shared/ui/winnability-dots/winnability-dots';
 
 @Component({
   selector: 'app-performance-metrics',
-  imports: [MeterBar],
+  imports: [MeterBar, WinnabilityDots],
   templateUrl: './performance-metrics.html',
   styleUrl: './performance-metrics.scss',
   providers: [PerformanceMetricsFacade],

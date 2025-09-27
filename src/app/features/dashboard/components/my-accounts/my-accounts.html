@@ -71,14 +71,7 @@
     </ng-template>
 
     <ng-template let-c appSmartCell="winnability">
-      <div class="winn pill pill--triage">
-        <div class="dots">
-          @for (_ of [1, 2, 3, 4]; track _) {
-            <span class="dot dot--winn"></span>
-          }
-        </div>
-        <span class="winn__label">{{ c.value }}</span>
-      </div>
+      <app-winnability-dots [value]="c.value" />
     </ng-template>
   </app-smart-table>
 </section>

@@ -3,12 +3,8 @@
     <div>
       <header class="performance__header">
         <h3 class="performance__label">{{ winnability()?.label }}</h3>
-        <div class="rating-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <app-winnability-dots [showBorder]="false" [showLabel]="false" [dotsCount]="4">
+        </app-winnability-dots>
       </header>
 
       <div class="performance__value performance__value--xl">

@@ -88,11 +88,21 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
-              "src/styles.scss"
-            ]
+              "src/styles.scss",
+              "src/assets/styles/colors.scss",
+              "src/assets/styles/typography.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src"]
+            }
           }
         },
         "lint": {
