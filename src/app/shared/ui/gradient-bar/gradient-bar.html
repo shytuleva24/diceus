@@ -1,20 +1,12 @@
 <div class="bar">
   <h4 class="bar-title">{{ title() }}</h4>
   <div [style.height]="height()" class="bar-container">
-    <svg
-      [attr.height]="height()"
-      [attr.viewBox]="'0 0 ' + width() + ' ' + height()"
-      [attr.width]="width()"
-    >
-      @for (segment of segments(); track segment.color + segment.x) {
-        <rect
-          [attr.fill]="segment.color"
-          [attr.height]="height()"
-          [attr.width]="segment.width"
-          [attr.x]="segment.x"
-          [attr.y]="0"
-        />
-      }
-    </svg>
+    @for (segment of config(); track i; let i = $index) {
+      <span
+        [style.backgroundColor]="segment.color"
+        [style.width.%]="segment.stop"
+        [style.zIndex]="config().length - i"
+      ></span>
+    }
   </div>
 </div>

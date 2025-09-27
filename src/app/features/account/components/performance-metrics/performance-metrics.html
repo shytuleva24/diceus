@@ -1,0 +1,68 @@
+<div class="performance">
+  <section class="performance__card performance__card--winnability">
+    <div>
+      <header class="performance__header">
+        <h3 class="performance__label">{{ winnability()?.label }}</h3>
+        <app-winnability-dots [showBorder]="false" [showLabel]="false" [dotsCount]="4">
+        </app-winnability-dots>
+      </header>
+
+      <div class="performance__value performance__value--xl">
+        {{ getWinnabilityStatus() }}
+      </div>
+    </div>
+    <a class="performance__link" href="#">See all factors →</a>
+  </section>
+
+  <section class="performance__card">
+    <div>
+      <header class="performance__header">
+        <h3 class="performance__label">{{ lossRatio()?.label }}</h3>
+      </header>
+      <div class="performance__value-group">
+        <div class="performance__value performance__value--lg">
+          {{ getLossRatioDisplay() }}
+        </div>
+        <span class="performance__sub">
+          {{ lossRatio()?.comparison }}
+        </span>
+      </div>
+    </div>
+    <a class="performance__link" href="#">View history →</a>
+  </section>
+
+  <section class="performance__card">
+    <header class="performance__header">
+      <h3 class="performance__label">{{ premiumGrowth()?.label }}</h3>
+    </header>
+
+    <div class="performance__value performance__value--lg">
+      {{ getPremiumGrowthDisplay() }}
+      <span class="performance__note"> {{ premiumGrowth()?.note }} </span>
+    </div>
+
+    <div class="performance__sub performance__sub--with-spacing">
+      {{ premiumGrowth()?.comparison }}
+    </div>
+    <a class="performance__link" href="#">View trend →</a>
+  </section>
+
+  <section class="performance__card performance__card--exposure">
+    <header class="performance__header">
+      <h3 class="performance__label">{{ exposureDistribution()?.label }}</h3>
+    </header>
+
+    <div class="exposure">
+      <div class="exposure__bars">
+        @for (item of getExposureItems(); track i; let i = $index) {
+          <app-meter-bar
+            [percent]="item.value * 100"
+            [height]="22"
+            [isShowPercent]="false"
+            goal="{{ item.name }}: {{ item.display }}"
+          />
+        }
+      </div>
+    </div>
+  </section>
+</div>

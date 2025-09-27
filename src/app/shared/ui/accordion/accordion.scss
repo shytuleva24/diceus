@@ -1,0 +1,90 @@
+@use 'assets/styles/tokens' as *;
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__section {
+    @include card;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 16px;
+
+    &.is-open {
+      background-color: $table-row-bg;
+
+      .accordion__badge {
+        border: 1px solid $text-primary;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    color: $text-primary;
+    cursor: pointer;
+  }
+
+  &__title {
+    @include faq;
+    margin: 0;
+    color: $text-primary;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  &__badge {
+    @include faq;
+    padding: 10px;
+    background: #252a38;
+    border: 1px solid #252a38;
+    border-radius: 8px;
+    color: $text-primary;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  &__panel {
+    max-height: 0;
+    margin-top: 16px;
+    padding-left: 20px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .is-open &__panel {
+    max-height: 500px;
+    transition: max-height 0.3s ease-in;
+  }
+
+  &__list {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    @include body-text;
+    color: $text-primary;
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+<div class="winnability">
+  <aside class="winnability__nav">
+    <app-accordion />
+  </aside>
+
+  <div aria-hidden="true" class="winnability__divider"></div>
+
+  <main class="winnability__content">
+    @if (winnabilityData.isLoading()) {
+      <div class="loading">Loading winnability data...</div>
+    } @else if (winnabilityData.error()) {
+      <div class="error">
+        Error loading winnability data: {{ winnabilityData.error()?.message }}
+      </div>
+    } @else if (winnabilityData.value()) {
+      <h2 class="winnability__title">{{ winnabilityData.value()?.accountDetails?.title }}</h2>
+
+      <div class="winnability__block">
+        <div class="winnability__card">
+          <h3>Overall Score</h3>
+          <div class="winnability__card-content">
+            <div class="score-display">
+              {{ winnabilityData.value()?.accountDetails?.summary?.display }}
+            </div>
+            <app-winnability-dots
+              [value]="winnabilityData.value()?.accountDetails?.summary?.rating?.label"
+            />
+          </div>
+        </div>
+
+        <div class="winnability__card">
+          <h3>Historical Trend</h3>
+          <app-historical-trend-chart
+            [data]="winnabilityData.value()?.accountDetails?.historicalTrend || []"
+          >
+          </app-historical-trend-chart>
+        </div>
+
+        <div class="winnability__card">
+          <h3>Position</h3>
+          @for (
+            position of winnabilityData.value()?.accountDetails?.position;
+            track position.label
+          ) {
+            <div class="position-item">
+              <app-meter-bar
+                [percent]="position.value * 100"
+                [height]="22"
+                [isShowPercent]="false"
+                goal="{{ position.label }}: {{ position.value * 100 | number: '1.0-0' }}%"
+              />
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="winnability__block">
+        <div class="winnability__card">
+          <app-driver-list
+            [title]="winnabilityData.value()?.accountDetails?.drivers?.increasing?.title || ''"
+            [items]="winnabilityData.value()?.accountDetails?.drivers?.increasing?.items || []"
+            [theme]="'green'"
+            [icon]="'up'"
+          >
+          </app-driver-list>
+        </div>
+
+        <div class="winnability__card">
+          <app-driver-list
+            [title]="winnabilityData.value()?.accountDetails?.drivers?.decreasing?.title || ''"
+            [items]="winnabilityData.value()?.accountDetails?.drivers?.decreasing?.items || []"
+            [theme]="'yellow'"
+            [icon]="'down'"
+          >
+          </app-driver-list>
+        </div>
+      </div>
+
+      <div class="winnability__card ai">
+        <h3 class="ai__title">
+          <app-svg-icon iconId="ai" width="27px" height="27px" />
+          AI-Powered Recommendations
+        </h3>
+        <div class="recommendation">
+          @for (rec of winnabilityData.value()?.accountDetails?.recommendations; track rec.id) {
+            <div class="recommendation-card">
+              <div class="recommendation-description">
+                <h4 class="recommendation-title">{{ rec.title }}</h4>
+                <p>{{ rec.body }}</p>
+              </div>
+              <app-button buttonType="apply">{{ rec.cta.text }}</app-button>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </main>
+</div>

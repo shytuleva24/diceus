@@ -1,1 +1,22 @@
-<section class="account-container"></section>
+<section class="account">
+  <div class="account-breadcrumbs">
+    <a class="account-breadcrumb" href="/">Dashboard</a>
+    //
+    <a class="account-breadcrumb" href="#">Accounts</a>
+    //
+    <a class="account-breadcrumb active">Maritime Logistics Corp</a>
+  </div>
+  <div class="account-content">
+    <app-account-info />
+    <div class="account-block">
+      <h2 class="account-title">Performance Metrics</h2>
+      <app-performance-metrics />
+    </div>
+    <div class="account-block">
+      <h2 class="account-title">Account Details</h2>
+      <div class="account-card">
+        <app-details />
+      </div>
+    </div>
+  </div>
+</section>

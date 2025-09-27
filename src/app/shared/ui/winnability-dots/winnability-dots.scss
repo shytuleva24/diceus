@@ -1,0 +1,41 @@
+@use 'assets/styles/tokens' as *;
+
+.pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #fff;
+
+  &--triage {
+    border: 1px solid $brand-primary;
+    color: $brand-primary;
+  }
+}
+
+.winn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+
+  &__label {
+    white-space: nowrap;
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: $color-brand-700;
+  border-radius: 50%;
+
+  &--winn {
+    background-color: $brand-primary;
+  }
+}

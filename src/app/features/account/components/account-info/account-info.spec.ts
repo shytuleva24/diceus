@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SimpleProgress } from './simple-progress';
+import { AccountInfo } from './account-info';
 
-describe('SimpleProgress', () => {
-  let component: SimpleProgress;
-  let fixture: ComponentFixture<SimpleProgress>;
+describe('AccountInfo', () => {
+  let component: AccountInfo;
+  let fixture: ComponentFixture<AccountInfo>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SimpleProgress],
+      imports: [AccountInfo],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SimpleProgress);
+    fixture = TestBed.createComponent(AccountInfo);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

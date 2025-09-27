@@ -1,0 +1,157 @@
+@use 'assets/styles/tokens' as *;
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  &__block {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__title {
+    @include h1;
+    margin: 0;
+    color: $text-primary;
+    font-weight: 300;
+  }
+}
+
+.info-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: $text-primary;
+
+  &__item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 8px;
+    padding-left: 24px;
+
+    &:not(:first-child) {
+      border-left: 1px solid $border-default;
+    }
+
+    &:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+
+  &__label {
+    @include label;
+    color: $text-muted;
+
+    &--muted {
+      @include label-tag;
+      opacity: 0.85;
+      color: $text-muted;
+    }
+  }
+
+  &__value {
+    @include body-text;
+    color: $text-primary;
+    white-space: nowrap;
+  }
+}
+
+.info-attention {
+  @include card;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 24px;
+  width: fit-content;
+  max-width: 710px;
+  border-color: $status-attention;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: $status-attention;
+  }
+
+  &__title {
+    @include faq;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  &__content {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    font-weight: 300;
+
+    p {
+      @include body-text;
+      margin: 0;
+      color: $text-primary;
+      font-weight: 600;
+    }
+
+    span {
+      color: $text-muted;
+      font-size: 13px;
+      line-height: 140%;
+    }
+
+    a {
+      color: $brand-primary;
+      font-weight: 400;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (width <= 1492px) {
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+@media (width <= 550px) {
+  .info-attention__content {
+    grid-template-columns: 1fr;
+  }
+
+  .info__block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

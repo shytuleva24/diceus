@@ -1,0 +1,32 @@
+<div class="accordion">
+  @for (section of sections(); track section.id) {
+    <section class="accordion__section" [class.is-open]="section.open">
+      <button
+        class="accordion__header"
+        type="button"
+        id="{{ section.id }}-button"
+        (click)="toggle(section.id)"
+        [attr.aria-expanded]="section.open"
+        [attr.aria-controls]="section.id + '-panel'"
+      >
+        <h4 class="accordion__title">{{ section.title }}</h4>
+        <span class="accordion__badge">{{ section.count }}</span>
+      </button>
+
+      <div
+        class="accordion__panel"
+        [id]="section.id + '-panel'"
+        role="region"
+        [attr.aria-labelledby]="section.id + '-button'"
+      >
+        <ul class="accordion__list" role="list">
+          @for (item of section.items; track item.text) {
+            <li class="accordion__item">
+              <a class="accordion__link" [href]="item.href || '#'">{{ item.text }}</a>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+  }
+</div>
